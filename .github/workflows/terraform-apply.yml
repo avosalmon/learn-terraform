@@ -8,7 +8,7 @@ on:
         type: string
 
 env:
-  TF_WORKSPACE: "learn-terraform-${{ inputs.environment }}"
+  TF_WORKSPACE: "learn-terraform-staging"
 
 jobs:
   terraform:
