@@ -1,0 +1,5 @@
+.editorconfig
+.git/
+.gitignore
+.terraform/
+README.md
