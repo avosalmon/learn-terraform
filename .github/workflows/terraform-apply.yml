@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: echo TF_API_TOKEN
-        run: echo ${{ secrets.TF_API_TOKEN }}N
+        run: echo ${{ secrets.TF_API_TOKEN }}
 
       - name: Checkout
         uses: actions/checkout@v2
