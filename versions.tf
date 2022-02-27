@@ -6,5 +6,13 @@ terraform {
     }
   }
 
+  cloud {
+    organization = "hamacorp"
+
+    workspaces {
+      tags = ["learn-terraform"]
+    }
+  }
+
   required_version = ">= 1.1.0"
 }
