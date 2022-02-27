@@ -39,10 +39,5 @@ jobs:
         id: validate
         run: terraform validate -no-color
 
-      # - name: Terraform Apply
-      #   run: terraform apply -auto-approve
-
-      # TODO: replace this with apply
-      - name: Terraform Plan
-        id: plan
-        run: terraform plan -no-color
+      - name: Terraform Apply
+        run: terraform apply
