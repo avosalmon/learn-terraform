@@ -6,6 +6,9 @@ on:
       environment:
         required: true
         type: string
+    secrets:
+      tf-api-token:
+        required: true
 
 env:
   TF_WORKSPACE: learn-terraform-${{ inputs.environment }}
@@ -22,7 +25,7 @@ jobs:
         uses: hashicorp/setup-terraform@v1
         with:
           terraform_version: 1.1.0
-          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+          cli_config_credentials_token: ${{ secrets.tf-api-token }}
 
       - name: Terraform Format
         id: fmt
@@ -39,6 +42,7 @@ jobs:
       # - name: Terraform Apply
       #   run: terraform apply -auto-approve
 
+      # TODO: replace this with apply
       - name: Terraform Plan
         id: plan
         run: terraform plan -no-color

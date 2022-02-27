@@ -10,3 +10,5 @@ jobs:
     uses: avosalmon/learn-terraform/.github/workflows/terraform-apply.yml@main
     with:
       environment: production
+    secrets:
+      tf-api-token: ${{ secrets.TF_API_TOKEN }}
