@@ -1,0 +1,12 @@
+name: Apply Production
+on:
+  release:
+    types:
+      - released
+
+jobs:
+  terraform:
+    name: Apply Terraform on Production
+    uses: avosalmon/learn-terraform/.github/workflows/terraform-apply.yml@main
+    with:
+      environment: production

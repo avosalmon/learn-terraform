@@ -1,0 +1,12 @@
+name: Apply Staging
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  terraform:
+    name: Apply Terraform on Staging
+    uses: avosalmon/learn-terraform/.github/workflows/terraform-apply.yml@main
+    with:
+      environment: staging
