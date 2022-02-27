@@ -15,6 +15,11 @@ jobs:
     name: Terraform Apply
     runs-on: ubuntu-latest
     steps:
+      - name: echo TF_API_TOKEN
+        env:
+          TF_API_TOKEN: ${{ secrets.TF_API_TOKEN }}
+        run: echo $TF_API_TOKEN
+
       - name: Checkout
         uses: actions/checkout@v2
 
