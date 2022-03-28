@@ -3,17 +3,33 @@ output "vpc_id" {
 }
 
 output "public_subnets" {
-  value = aws_subnet.public_subnet
+  value = [for subnet in aws_subnet.public_subnet : {
+    id                = subnet.id
+    cidr_block        = subnet.cidr_block
+    availability_zone = subnet.availability_zone
+  }]
 }
 
 output "private_network_subnets" {
-  value = aws_subnet.private_network_subnet
+  value = [for subnet in aws_subnet.private_network_subnet : {
+    id                = subnet.id
+    cidr_block        = subnet.cidr_block
+    availability_zone = subnet.availability_zone
+  }]
 }
 
 output "private_app_subnets" {
-  value = aws_subnet.private_app_subnet
+  value = [for subnet in aws_subnet.private_app_subnet : {
+    id                = subnet.id
+    cidr_block        = subnet.cidr_block
+    availability_zone = subnet.availability_zone
+  }]
 }
 
 output "private_db_subnets" {
-  value = aws_subnet.private_db_subnet
+  value = [for subnet in aws_subnet.private_db_subnet : {
+    id                = subnet.id
+    cidr_block        = subnet.cidr_block
+    availability_zone = subnet.availability_zone
+  }]
 }
