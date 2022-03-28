@@ -70,7 +70,6 @@ locals {
   num_azs            = length(data.aws_availability_zones.available.names)
   ami_image_id       = data.aws_ami.ami.image_id
   internet_route     = var.internet_access ? 1 : 0
-  s3_endpoint        = var.s3_endpoint ? 1 : 0
 
   tags = {
     Name   = local.name
