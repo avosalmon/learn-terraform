@@ -49,17 +49,8 @@ data "aws_availability_zones" "available" {
 }
 
 locals {
-  name                  = "NAT_Instance"
-  instance_type         = var.instance_type
-  nat_subnet_id_a       = var.public_subnets[0].id
-  client_subnet_cidr_a  = var.public_subnets[0].cidr_block
-  az_a                  = var.public_subnets[0].availability_zone
-  nat_subnet_id_b       = var.public_subnets[1].id
-  client_subnet_cidr_b  = var.public_subnets[1].cidr_block
-  az_b                  = var.public_subnets[1].availability_zone
-  nat_subnet_id_c       = var.public_subnets[2].id
-  client_subnet_cidr_c  = var.public_subnets[2].cidr_block
-  az_c                  = var.public_subnets[2].availability_zone
+  name          = "NAT_Instance"
+  instance_type = var.instance_type
 
   ports = {
     tcp = [443]
