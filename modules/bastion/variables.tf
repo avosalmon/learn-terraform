@@ -67,7 +67,7 @@ variable "region" {
 variable "bucket_name" {
   type        = string
   description = "Bucket-Name"
-  default     = "accredify-bastion"
+  default     = "ryuta-hamasaki-bastion"
 }
 
 variable "bucket_versioning" {
