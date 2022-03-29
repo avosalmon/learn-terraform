@@ -3,8 +3,10 @@ provider "aws" {
 }
 
 module "network" {
-  source         = "./modules/network"
-  vpc_cidr_block = var.vpc_cidr_block
+  source = "./modules/network"
+
+  vpc_cidr_block            = var.vpc_cidr_block
+  nat_network_interface_ids = module.nat_instance.network_interface_ids
 }
 
 module "nat_instance" {
